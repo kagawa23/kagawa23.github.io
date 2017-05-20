@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="docker," />
 
 
 
@@ -87,19 +87,17 @@
 
 
 
-<meta name="description" content="今天开始正式学习Django，奉上一张学习曲线">
-<meta name="keywords">
+<meta name="description" content="项目需要，在docker image build阶段需要运行一个脚本，重定向bash脚本运行的输出，stderr重定向到stdout shell命令行里很简单 1bash script.sh 2&amp;gt;&amp;amp;1 在Dockerfile中直接定义 1CMD [&amp;quot;bash&amp;quot;,&amp;quot;script.sh&amp;quot;,&amp;quot;2&amp;gt;&amp;amp;1&amp;quot;] 这样是没有">
+<meta name="keywords" content="docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django学习笔记（一）">
-<meta property="og:url" content="http://yoursite.com/2017/05/08/Django学习笔记（一）/index.html">
+<meta property="og:title" content="使用 docker exec 命令行重定向stderr输出">
+<meta property="og:url" content="http://yoursite.com/2017/05/20/the-tricks-to-use-docker-exec-command/index.html">
 <meta property="og:site_name" content="Kagawa23's Blog">
-<meta property="og:description" content="今天开始正式学习Django，奉上一张学习曲线">
-<meta property="og:image" content="http://yoursite.com/images/学习曲线.png">
-<meta property="og:updated_time" content="2017-05-08T01:15:51.000Z">
+<meta property="og:description" content="项目需要，在docker image build阶段需要运行一个脚本，重定向bash脚本运行的输出，stderr重定向到stdout shell命令行里很简单 1bash script.sh 2&amp;gt;&amp;amp;1 在Dockerfile中直接定义 1CMD [&amp;quot;bash&amp;quot;,&amp;quot;script.sh&amp;quot;,&amp;quot;2&amp;gt;&amp;amp;1&amp;quot;] 这样是没有">
+<meta property="og:updated_time" content="2017-05-20T00:32:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Django学习笔记（一）">
-<meta name="twitter:description" content="今天开始正式学习Django，奉上一张学习曲线">
-<meta name="twitter:image" content="http://yoursite.com/images/学习曲线.png">
+<meta name="twitter:title" content="使用 docker exec 命令行重定向stderr输出">
+<meta name="twitter:description" content="项目需要，在docker image build阶段需要运行一个脚本，重定向bash脚本运行的输出，stderr重定向到stdout shell命令行里很简单 1bash script.sh 2&amp;gt;&amp;amp;1 在Dockerfile中直接定义 1CMD [&amp;quot;bash&amp;quot;,&amp;quot;script.sh&amp;quot;,&amp;quot;2&amp;gt;&amp;amp;1&amp;quot;] 这样是没有">
 
 
 
@@ -127,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/08/Django学习笔记（一）/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/20/the-tricks-to-use-docker-exec-command/"/>
 
 
 
 
 
-  <title> Django学习笔记（一） | Kagawa23's Blog </title>
+  <title> 使用 docker exec 命令行重定向stderr输出 | Kagawa23's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -262,7 +260,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/08/Django学习笔记（一）/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/20/the-tricks-to-use-docker-exec-command/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Kagawa23">
@@ -283,7 +281,7 @@
             
             
               
-                Django学习笔记（一）
+                使用 docker exec 命令行重定向stderr输出
               
             
           </h1>
@@ -298,8 +296,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-08T08:37:53+08:00">
-                2017-05-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-20T07:49:35+08:00">
+                2017-05-20
               </time>
             
 
@@ -316,7 +314,7 @@
 
           
           
-             <span id="/2017/05/08/Django学习笔记（一）/" class="leancloud_visitors" data-flag-title="Django学习笔记（一）">
+             <span id="/2017/05/20/the-tricks-to-use-docker-exec-command/" class="leancloud_visitors" data-flag-title="使用 docker exec 命令行重定向stderr输出">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -345,24 +343,18 @@
       
 
       
-        <p>今天开始正式学习Django，奉上一张学习曲线<br><img src="/images/学习曲线.png" alt="图片注释" title="如何学习一门技术"></p>
+        <p>项目需要，在docker image build阶段需要运行一个脚本，重定向bash脚本运行的输出，stderr重定向到stdout</p>
+<p>shell命令行里很简单</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bash script.sh 2&gt;&amp;1</div></pre></td></tr></table></figure>
+<p>在Dockerfile中直接定义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CMD [&quot;bash&quot;,&quot;script.sh&quot;,&quot;2&gt;&amp;1&quot;]</div></pre></td></tr></table></figure>
+<p>这样是没有办法工作的。</p>
 <a id="more"></a>
-<h2 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h2><h3 id="百科定义"><a href="#百科定义" class="headerlink" title="百科定义"></a>百科定义</h3><p>Django是一个开放源代码的<strong>Web应用框架</strong>，由Python写成。采用了MVC的软件设计模式。</p>
-<h3 id="对比同类型的技术"><a href="#对比同类型的技术" class="headerlink" title="对比同类型的技术"></a>对比同类型的技术</h3><h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><ol>
-<li>完美的文档</li>
-<li>全套解决方案</li>
-<li>强大的URL路由配置</li>
-<li>自助管理后台</li>
-</ol>
-<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><ol>
-<li>系统紧耦合</li>
-<li>Django自带的ORM远不如SQLAlchemy强大</li>
-<li>Template功能比较弱，不能插入Python代码，要写复杂一点的逻辑需要另外用Python实现Tag或Filter。</li>
-<li>URL配置虽然强大，但全部要手写</li>
-<li>Python文件做配置文件，而不是更常见的ini、xml或yaml等形式。</li>
-<li>Django的auth跟其它模块结合紧密，功能也挺强的，就是做的有点过了 </li>
-</ol>
-<p><a href="https://feilong.me/2011/01/talk-about-python-web-framework" target="_blank" rel="external">浅谈python web框架</a></p>
+<p>这个Dockerfile在执行的过程中是不会触发命令行环境的，e.g. <code>CMD [&quot;echo&quot;,&quot;$HOME&quot;]</code>是没有办法替换环境变量<code>$HOME</code>的。</p>
+<p>上面的命令会将“2&gt;&amp;1”作为命令行参数传到myscript.sh 里面</p>
+<p>需要这样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CMD [&quot;/bin/sh&quot;, &quot;-c&quot;, &quot;bash myscript.sh 2&gt;&amp;1&quot;]</div></pre></td></tr></table></figure>
+<p><a href="http://http://stackoverflow.com/questions/34632959/redirecting-command-output-in-docker" target="_blank" rel="external">参考</a></p>
 
       
     </div>
@@ -390,6 +382,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag"># docker</a>
+          
+        </div>
+      
 
       
         
@@ -399,18 +397,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/20/the-tricks-to-use-docker-exec-command/" rel="next" title="使用 docker exec 命令行重定向stderr输出">
-                <i class="fa fa-chevron-left"></i> 使用 docker exec 命令行重定向stderr输出
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/14/安装hexo博客/" rel="prev" title="如何搭建hexo博客">
-                如何搭建hexo博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/08/Django学习笔记（一）/" rel="prev" title="Django学习笔记（一）">
+                Django学习笔记（一） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -460,17 +454,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="https://avatars2.githubusercontent.com/u/10058453"
@@ -543,22 +528,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#是什么？"><span class="nav-number">1.</span> <span class="nav-text">是什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百科定义"><span class="nav-number">1.1.</span> <span class="nav-text">百科定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对比同类型的技术"><span class="nav-number">1.2.</span> <span class="nav-text">对比同类型的技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#优点："><span class="nav-number">1.2.1.</span> <span class="nav-text">优点：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点："><span class="nav-number">1.2.2.</span> <span class="nav-text">缺点：</span></a></li></ol></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
