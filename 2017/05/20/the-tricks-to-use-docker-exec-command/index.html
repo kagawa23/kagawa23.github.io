@@ -90,13 +90,13 @@
 <meta name="description" content="项目需要，在docker image build阶段需要运行一个脚本，重定向bash脚本运行的输出，stderr重定向到stdout shell命令行里很简单 1bash script.sh 2&amp;gt;&amp;amp;1 在Dockerfile中直接定义 1CMD [&amp;quot;bash&amp;quot;,&amp;quot;script.sh&amp;quot;,&amp;quot;2&amp;gt;&amp;amp;1&amp;quot;] 这样是没有">
 <meta name="keywords" content="docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 docker exec 命令行重定向stderr输出">
+<meta property="og:title" content="使用 Dockerfile CMD 命令行重定向stderr输出">
 <meta property="og:url" content="http://yoursite.com/2017/05/20/the-tricks-to-use-docker-exec-command/index.html">
 <meta property="og:site_name" content="Kagawa23's Blog">
 <meta property="og:description" content="项目需要，在docker image build阶段需要运行一个脚本，重定向bash脚本运行的输出，stderr重定向到stdout shell命令行里很简单 1bash script.sh 2&amp;gt;&amp;amp;1 在Dockerfile中直接定义 1CMD [&amp;quot;bash&amp;quot;,&amp;quot;script.sh&amp;quot;,&amp;quot;2&amp;gt;&amp;amp;1&amp;quot;] 这样是没有">
-<meta property="og:updated_time" content="2017-05-20T00:32:03.000Z">
+<meta property="og:updated_time" content="2017-05-20T00:38:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用 docker exec 命令行重定向stderr输出">
+<meta name="twitter:title" content="使用 Dockerfile CMD 命令行重定向stderr输出">
 <meta name="twitter:description" content="项目需要，在docker image build阶段需要运行一个脚本，重定向bash脚本运行的输出，stderr重定向到stdout shell命令行里很简单 1bash script.sh 2&amp;gt;&amp;amp;1 在Dockerfile中直接定义 1CMD [&amp;quot;bash&amp;quot;,&amp;quot;script.sh&amp;quot;,&amp;quot;2&amp;gt;&amp;amp;1&amp;quot;] 这样是没有">
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <title> 使用 docker exec 命令行重定向stderr输出 | Kagawa23's Blog </title>
+  <title> 使用 Dockerfile CMD 命令行重定向stderr输出 | Kagawa23's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -281,7 +281,7 @@
             
             
               
-                使用 docker exec 命令行重定向stderr输出
+                使用 Dockerfile CMD 命令行重定向stderr输出
               
             
           </h1>
@@ -314,7 +314,7 @@
 
           
           
-             <span id="/2017/05/20/the-tricks-to-use-docker-exec-command/" class="leancloud_visitors" data-flag-title="使用 docker exec 命令行重定向stderr输出">
+             <span id="/2017/05/20/the-tricks-to-use-docker-exec-command/" class="leancloud_visitors" data-flag-title="使用 Dockerfile CMD 命令行重定向stderr输出">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -354,7 +354,7 @@
 <p>上面的命令会将“2&gt;&amp;1”作为命令行参数传到myscript.sh 里面</p>
 <p>需要这样</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CMD [&quot;/bin/sh&quot;, &quot;-c&quot;, &quot;bash myscript.sh 2&gt;&amp;1&quot;]</div></pre></td></tr></table></figure>
-<p><a href="http://http://stackoverflow.com/questions/34632959/redirecting-command-output-in-docker" target="_blank" rel="external">参考</a></p>
+<p><a href="http://http://stackoverflow.com/questions/34632959/redirecting-command-output-in-docker" target="_blank" rel="external">参考链接</a></p>
 
       
     </div>
