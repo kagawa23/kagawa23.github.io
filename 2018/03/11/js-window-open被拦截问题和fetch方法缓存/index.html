@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Kagawa23, zczhaozc" />
+  <meta name="keywords" content="js," />
 
 
 
@@ -87,15 +87,17 @@
 
 
 
-<meta name="description" content="养成写字好习惯">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Kagawa23's Blog">
-<meta property="og:url" content="https://kagawa23.github.io/tags/quicknote-hexo-next/index.html">
+<meta name="description" content="window.open问题  问题的缘由是要打开新的网页，在鼠标点击时间里加了一段window.open的方法，由于这段点击时间还要访问另外一个api去取数据，所以导致了被浏览器拦截了。 因为还写了别的类似的按钮发现弹出代码出现在ajax或者是异步调用的内部时，马上出现被拦截的表现。 原因是浏览器检查到非用户的操作产生的新弹出窗口，会对其进行阻止，浏览器认为这个不是用户希望看到的页面， 解决方案">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js:window.open被拦截问题和fetch方法缓存">
+<meta property="og:url" content="https://kagawa23.github.io/2018/03/11/js-window-open被拦截问题和fetch方法缓存/index.html">
 <meta property="og:site_name" content="Kagawa23's Blog">
-<meta property="og:description" content="养成写字好习惯">
+<meta property="og:description" content="window.open问题  问题的缘由是要打开新的网页，在鼠标点击时间里加了一段window.open的方法，由于这段点击时间还要访问另外一个api去取数据，所以导致了被浏览器拦截了。 因为还写了别的类似的按钮发现弹出代码出现在ajax或者是异步调用的内部时，马上出现被拦截的表现。 原因是浏览器检查到非用户的操作产生的新弹出窗口，会对其进行阻止，浏览器认为这个不是用户希望看到的页面， 解决方案">
+<meta property="og:updated_time" content="2018-03-11T13:29:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kagawa23's Blog">
-<meta name="twitter:description" content="养成写字好习惯">
+<meta name="twitter:title" content="js:window.open被拦截问题和fetch方法缓存">
+<meta name="twitter:description" content="window.open问题  问题的缘由是要打开新的网页，在鼠标点击时间里加了一段window.open的方法，由于这段点击时间还要访问另外一个api去取数据，所以导致了被浏览器拦截了。 因为还写了别的类似的按钮发现弹出代码出现在ajax或者是异步调用的内部时，马上出现被拦截的表现。 原因是浏览器检查到非用户的操作产生的新弹出窗口，会对其进行阻止，浏览器认为这个不是用户希望看到的页面， 解决方案">
 
 
 
@@ -123,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="https://kagawa23.github.io/tags/quicknote-hexo-next/"/>
+  <link rel="canonical" href="https://kagawa23.github.io/2018/03/11/js-window-open被拦截问题和fetch方法缓存/"/>
 
 
 
 
 
-  <title> 标签: quicknote hexo next | Kagawa23's Blog </title>
+  <title> js:window.open被拦截问题和fetch方法缓存 | Kagawa23's Blog </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -164,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,46 +250,187 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        quicknote hexo next
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://kagawa23.github.io/2018/03/11/js-window-open被拦截问题和fetch方法缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kagawa23">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://avatars2.githubusercontent.com/u/10058453">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kagawa23's Blog">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                js:window.open被拦截问题和fetch方法缓存
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-11T20:45:20+08:00">
+                2018-03-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/03/11/js-window-open被拦截问题和fetch方法缓存/" class="leancloud_visitors" data-flag-title="js:window.open被拦截问题和fetch方法缓存">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <ol>
+<li>window.open问题</li>
+</ol>
+<p>问题的缘由是要打开新的网页，在鼠标点击时间里加了一段window.open的方法，由于这段点击时间还要访问另外一个api去取数据，所以导致了被浏览器拦截了。</p>
+<p>因为还写了别的类似的按钮发现弹出代码出现在ajax或者是异步调用的内部时，马上出现被拦截的表现。</p>
+<p>原因是浏览器检查到非用户的操作产生的新弹出窗口，会对其进行阻止，浏览器认为这个不是用户希望看到的页面，</p>
+<p>解决方案：</p>
+<ol>
+<li><p>使用a标签代替<br>将标签可以换成a锚点来替代</p>
+</li>
+<li><p>先弹出窗口，再重定向</p>
+</li>
+</ol>
+<p>先通过用户打开页面，在对页面进行重定向<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">foo.addEventListener(&apos;click&apos;,function()&#123;</div><div class="line">    var win = window.open(&apos;xxxx&apos;);</div><div class="line">    ajax().done(funciton()&#123;</div><div class="line">        win.location.href = &quot;taget url&quot;</div><div class="line">    &#125;)</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<ol>
+<li>fetch缓存</li>
+</ol>
+<p>碰上一个问题，fetch api请求一个s3上的资源，对他进行了修改，保存很快又一次去请求这个资源，发现资源没有变化。</p>
+<p>是由于调用fetch api碰上了http的缓存，可以在header设置为{cache：no-store} 来避免缓存影响运行结果。</p>
+<p>同样的微信浏览器有些图片也会被缓存如果图片发生改变了如果缓存存在就不会更新，可以在请求的资源后面加上请求参数， 保证每次都会更新图片。<br>http：//*?v=new Date().getTime()</p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/04/14/安装hexo博客/" itemprop="url">
-              
-                <span itemprop="name">如何搭建hexo博客</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-04-14T14:29:24+08:00"
-              content="2017-04-14" >
-          04-14
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/03/看房记/" rel="prev" title="看房记">
+                看房记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -295,6 +438,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8yODIzMS80ODAz"></div>
+    
+  </div>
+
 
         </div>
         
@@ -504,6 +653,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
